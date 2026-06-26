@@ -1,0 +1,1638 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专业方向深度测评</title>
+  <style>
+    :root{--bg:#F7F5EF;--primary:#1E3A5F;--accent:#2A9D8F;--warm:#F4A261;--text:#1F2933;--muted:#6B7280;--risk:#D65A5A;--card:rgba(255,255,255,.9);--line:rgba(30,58,95,.12);--shadow:0 24px 70px rgba(30,58,95,.15)}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Georgia,'PingFang SC','Microsoft YaHei',serif;background:radial-gradient(circle at 8% 0,rgba(42,157,143,.22),transparent 32%),radial-gradient(circle at 100% 8%,rgba(244,162,97,.22),transparent 28%),linear-gradient(180deg,#fbf8ef,var(--bg) 60%,#eef6f2);color:var(--text)}body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(30,58,95,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(30,58,95,.025) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(#000,transparent 70%)}
+    .app{width:min(1040px,100%);margin:auto;padding:16px;position:relative}.hero,.card{background:var(--card);border:1px solid rgba(255,255,255,.8);border-radius:30px;box-shadow:var(--shadow);padding:clamp(22px,5vw,42px);backdrop-filter:blur(18px);animation:rise .45s ease both}.hero{min-height:calc(100vh - 32px);display:flex;flex-direction:column;justify-content:center;gap:20px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:220px;height:220px;right:-90px;top:-80px;border-radius:38% 62% 48% 52%;background:linear-gradient(135deg,rgba(42,157,143,.2),rgba(244,162,97,.22))}
+    h1{font-size:clamp(34px,10vw,68px);line-height:1.03;margin:0;color:var(--primary);letter-spacing:-.055em;max-width:820px}h2{margin:0 0 12px;color:var(--primary);font-size:clamp(22px,6vw,34px);line-height:1.18;letter-spacing:-.03em}h3{color:#16304F;margin:18px 0 10px}p{line-height:1.78;color:var(--muted);font-size:16px}.lead{font-size:clamp(17px,4.4vw,21px);color:#425466;max-width:780px}.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{padding:9px 13px;border-radius:999px;background:rgba(42,157,143,.13);color:var(--primary);font-size:14px;font-weight:700;border:1px solid rgba(42,157,143,.16)}
+    .actions{display:grid;gap:12px;margin-top:14px}button{border:0;border-radius:18px;min-height:48px;padding:14px 18px;font-weight:800;font-size:15px;color:white;background:linear-gradient(135deg,var(--primary),#285985);box-shadow:0 12px 26px rgba(30,58,95,.22);cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease,background .16s ease;font-family:inherit}button:hover{transform:translateY(-1px);box-shadow:0 16px 34px rgba(30,58,95,.24)}button:active{transform:translateY(1px) scale(.99)}button.secondary{background:rgba(255,255,255,.76);color:var(--primary);border:1px solid var(--line);box-shadow:none}.hidden{display:none!important}
+    .info-grid,.profile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.info-grid div,.profile-grid div{background:rgba(30,58,95,.055);border-radius:18px;padding:14px;border:1px solid rgba(30,58,95,.06)}.info-grid span,.profile-grid span{display:block;color:var(--muted);font-size:12px;margin-bottom:4px}.info-grid strong,.profile-grid strong{color:var(--primary);font-size:18px}.progress-wrap{margin-bottom:22px}.progress{height:9px;background:rgba(30,58,95,.10);border-radius:99px;overflow:hidden}.progress>div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--warm));transition:width .28s ease}.progress-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:9px;font-weight:700}
+    .scale{display:grid;gap:10px;margin:20px 0}.option{background:rgba(255,255,255,.84);color:var(--primary);box-shadow:none;border:1px solid rgba(30,58,95,.12);text-align:left;display:flex;justify-content:space-between;align-items:center}.option.selected{border-color:rgba(42,157,143,.65);background:linear-gradient(135deg,rgba(42,157,143,.14),rgba(244,162,97,.08));color:#16304F}.option.selected:after{content:"已选";font-size:12px;color:var(--accent);font-weight:900}.hint{color:var(--muted);background:rgba(244,162,97,.18);border-left:4px solid var(--warm);padding:10px 12px;border-radius:12px}.split{grid-template-columns:1fr 1fr}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px}.mini-card{background:rgba(255,255,255,.82);border-radius:22px;padding:17px;border:1px solid rgba(30,58,95,.10);box-shadow:0 14px 38px rgba(30,58,95,.10)}.mini-card p{margin:6px 0;font-size:14px}.mini-card small{color:var(--muted);line-height:1.6}.score{float:right;color:var(--accent);font-weight:900;font-size:26px}
+    .bar-row{display:grid;grid-template-columns:106px 1fr 42px;gap:10px;align-items:center;margin:12px 0}.bar-row span{color:var(--primary);font-weight:800;font-size:14px}.bar-row strong{color:var(--accent);text-align:right}.bar-row .bar{height:11px;background:rgba(30,58,95,.10);border-radius:99px;overflow:hidden}.bar-row .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--warm));border-radius:inherit}.eyebrow{text-transform:uppercase;letter-spacing:.10em;color:var(--accent);font-size:12px;font-weight:900;margin:0 0 10px}.loader{width:62px;height:62px;border-radius:50%;border:5px solid rgba(30,58,95,.12);border-top-color:var(--accent);animation:spin 1s linear infinite;margin-top:18px}.result-stack{display:grid;gap:16px}.result-hero{min-height:auto}.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--primary);color:white;padding:12px 16px;border-radius:999px;box-shadow:var(--shadow);font-weight:800;z-index:5}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes spin{to{transform:rotate(360deg)}}
+    @media (min-width:740px){.app{padding:28px}.actions{grid-template-columns:repeat(2,minmax(0,1fr))}.result-hero .actions{grid-template-columns:repeat(4,minmax(0,1fr))}.scale{grid-template-columns:repeat(5,minmax(0,1fr))}.scale .option{text-align:center;justify-content:center}.rank-options,.multi-options{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:420px){.info-grid,.profile-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:88px 1fr 34px;gap:8px}.hero,.card{border-radius:24px}}
+  </style>
+</head>
+<body><main id="app" class="app">
+<section id="welcome" class="hero"><div class="chips"><span class="chip">深度版 · 126 题</span><span class="chip">预计 25-35 分钟</span><span class="chip">本地保存 · 可导出</span></div><h1>专业方向深度测评</h1><p class="lead">不是替你决定专业，而是帮你看清喜欢什么、适合什么、不能接受什么。结果会整理成 JSON 与 Markdown，供后续志愿知识库筛选使用。</p><div class="info-grid"><div><span>理论底座</span><strong>RIASEC + 能力价值观</strong></div><div><span>运行方式</span><strong>纯本地 HTML</strong></div><div><span>隐私</span><strong>不联网、不登录</strong></div><div><span>体验</span><strong>移动端优先</strong></div></div><div class="actions"><button id="startBtn">开始测评</button><button id="resumeBtn" class="secondary">继续上次测评</button></div></section>
+<section id="confirm" class="card hidden"><p class="eyebrow">基础信息确认</p><h2>先确认考生信息</h2><p>本测评按当前项目里的安徽物理类考生画像生成解释，不在页面内修改分数和位次。</p><div class="profile-grid"><div><span>省份</span><strong>安徽</strong></div><div><span>年份</span><strong>2026</strong></div><div><span>科类</span><strong>物理类</strong></div><div><span>总分</span><strong>530</strong></div><div><span>位次</span><strong>95924</strong></div><div><span>选科</span><strong>物理 / 化学 / 生物</strong></div></div><div class="actions"><button id="confirmBtn">信息正确，开始答题</button><button id="backWelcomeBtn" class="secondary">返回</button></div></section>
+<section id="survey" class="card hidden"><div class="progress-wrap"><div class="progress-meta"><span id="sectionName">章节</span><span id="progressText">1 / 126</span></div><div class="progress"><div id="progressBar"></div></div></div><div id="questionCard"></div><div class="actions split"><button id="prevBtn" class="secondary">上一题</button><button id="nextBtn">下一题</button></div></section>
+<section id="loading" class="card hidden"><p class="eyebrow">生成中</p><h2>正在生成你的专业画像...</h2><p>我们正在综合兴趣、能力、价值观、工作环境、风险承受和家庭约束。这个结果只用于辅助讨论，不替代最终决策。</p><div class="loader"></div></section>
+<section id="results" class="result-stack hidden"></section></main>
+<script>
+const STORAGE_KEY = "gaokao.preferenceSurvey.v1";
+const QUESTIONS = [
+  {
+    "id": "R01",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我愿意研究机器、电路、能源系统是如何运行的。",
+    "weights": {
+      "riasec_R": 1,
+      "engineering": 0.8,
+      "electrical": 0.6
+    }
+  },
+  {
+    "id": "R02",
+    "module": "riasec",
+    "type": "likert",
+    "text": "比起只看文字材料，我更喜欢接触设备、工具、模型或真实流程。",
+    "weights": {
+      "riasec_R": 1,
+      "hands_on": 0.5,
+      "factory": 0.2,
+      "engineering": 0.5
+    }
+  },
+  {
+    "id": "R03",
+    "module": "riasec",
+    "type": "likert",
+    "text": "如果专业课包含实验、测量、装配或调试，我通常不会排斥。",
+    "weights": {
+      "riasec_R": 1,
+      "hands_on": 0.5,
+      "factory": 0.2,
+      "engineering": 0.5
+    }
+  },
+  {
+    "id": "R04",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我能接受未来工作中偶尔去现场、车间、实验室或项目一线。",
+    "weights": {
+      "riasec_R": 1,
+      "hands_on": 0.5,
+      "factory": 0.2,
+      "engineering": 0.5
+    }
+  },
+  {
+    "id": "R05",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我对电力、交通、制造、能源这类真实系统有好奇心。",
+    "weights": {
+      "riasec_R": 1,
+      "hands_on": 0.5,
+      "factory": 0.2,
+      "engineering": 0.5
+    }
+  },
+  {
+    "id": "R06",
+    "module": "riasec",
+    "type": "likert",
+    "text": "解决一个看得见、摸得着的技术问题会让我有成就感。",
+    "weights": {
+      "riasec_R": 1,
+      "hands_on": 0.5,
+      "factory": 0.2,
+      "engineering": 0.5
+    }
+  },
+  {
+    "id": "I01",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我喜欢用数据、实验或证据解释一个现象，而不是只凭感觉判断。",
+    "weights": {
+      "riasec_I": 1,
+      "math_logic": 0.4,
+      "abstract_reasoning": 0.4,
+      "data_analysis": 0.5
+    }
+  },
+  {
+    "id": "I02",
+    "module": "riasec",
+    "type": "likert",
+    "text": "遇到复杂问题时，我愿意花时间查资料、比较证据、慢慢推理。",
+    "weights": {
+      "riasec_I": 1,
+      "math_logic": 0.4,
+      "abstract_reasoning": 0.4,
+      "data_analysis": 0.5
+    }
+  },
+  {
+    "id": "I03",
+    "module": "riasec",
+    "type": "likert",
+    "text": "数学、物理、化学、生物中的原理性内容会激发我的好奇心。",
+    "weights": {
+      "riasec_I": 1,
+      "math_logic": 0.4,
+      "abstract_reasoning": 0.4,
+      "data_analysis": 0.5
+    }
+  },
+  {
+    "id": "I04",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我愿意学习需要长期积累的专业知识，而不是只追求短期轻松。",
+    "weights": {
+      "riasec_I": 1,
+      "math_logic": 0.4,
+      "abstract_reasoning": 0.4,
+      "data_analysis": 0.5
+    }
+  },
+  {
+    "id": "I05",
+    "module": "riasec",
+    "type": "likert",
+    "text": "面对不确定的问题，我愿意先拆解变量，再做判断。",
+    "weights": {
+      "riasec_I": 1,
+      "math_logic": 0.4,
+      "abstract_reasoning": 0.4,
+      "data_analysis": 0.5
+    }
+  },
+  {
+    "id": "I06",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我能接受专业学习中有较多公式、概念、实验或文献。",
+    "weights": {
+      "riasec_I": 1,
+      "math_logic": 0.4,
+      "abstract_reasoning": 0.4,
+      "data_analysis": 0.5
+    }
+  },
+  {
+    "id": "A01",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我喜欢写作、设计、影像、语言表达或内容创作。",
+    "weights": {
+      "riasec_A": 1,
+      "language_expression": 0.4,
+      "creative_expression": 0.7
+    }
+  },
+  {
+    "id": "A02",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我会关注作品、页面、文字或视频是否有审美和表达力。",
+    "weights": {
+      "riasec_A": 1,
+      "language_expression": 0.4,
+      "creative_expression": 0.7
+    }
+  },
+  {
+    "id": "A03",
+    "module": "riasec",
+    "type": "likert",
+    "text": "如果一个专业允许我表达观点、创造内容，我会更有动力。",
+    "weights": {
+      "riasec_A": 1,
+      "language_expression": 0.4,
+      "creative_expression": 0.7
+    }
+  },
+  {
+    "id": "A04",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我不排斥开放式任务，即使它没有唯一标准答案。",
+    "weights": {
+      "riasec_A": 1,
+      "language_expression": 0.4,
+      "creative_expression": 0.7
+    }
+  },
+  {
+    "id": "A05",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我愿意学习传播、语言、设计或文化相关知识。",
+    "weights": {
+      "riasec_A": 1,
+      "language_expression": 0.4,
+      "creative_expression": 0.7
+    }
+  },
+  {
+    "id": "A06",
+    "module": "riasec",
+    "type": "likert",
+    "text": "比起重复执行，我更希望任务中有一定个人风格和创意空间。",
+    "weights": {
+      "riasec_A": 1,
+      "language_expression": 0.4,
+      "creative_expression": 0.7
+    }
+  },
+  {
+    "id": "S01",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我愿意长期和学生、病人或需要帮助的人打交道。",
+    "weights": {
+      "riasec_S": 1,
+      "communication": 0.4,
+      "helping": 0.6,
+      "hospital": 0.15,
+      "school": 0.15
+    }
+  },
+  {
+    "id": "S02",
+    "module": "riasec",
+    "type": "likert",
+    "text": "当别人因为我的解释或帮助变得更好时，我会有成就感。",
+    "weights": {
+      "riasec_S": 1,
+      "communication": 0.4,
+      "helping": 0.6,
+      "hospital": 0.15,
+      "school": 0.15
+    }
+  },
+  {
+    "id": "S03",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我能接受未来工作中有较多沟通、安抚或服务对象互动。",
+    "weights": {
+      "riasec_S": 1,
+      "communication": 0.4,
+      "helping": 0.6,
+      "hospital": 0.15,
+      "school": 0.15
+    }
+  },
+  {
+    "id": "S04",
+    "module": "riasec",
+    "type": "likert",
+    "text": "教育、医疗、康复、心理、公共服务这些方向对我有吸引力。",
+    "weights": {
+      "riasec_S": 1,
+      "communication": 0.4,
+      "helping": 0.6,
+      "hospital": 0.15,
+      "school": 0.15
+    }
+  },
+  {
+    "id": "S05",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我愿意为了他人的安全、健康或成长承担耐心细致的工作。",
+    "weights": {
+      "riasec_S": 1,
+      "communication": 0.4,
+      "helping": 0.6,
+      "hospital": 0.15,
+      "school": 0.15
+    }
+  },
+  {
+    "id": "S06",
+    "module": "riasec",
+    "type": "likert",
+    "text": "比起单独面对机器，我也能接受稳定的人际互动场景。",
+    "weights": {
+      "riasec_S": 1,
+      "communication": 0.4,
+      "helping": 0.6,
+      "hospital": 0.15,
+      "school": 0.15
+    }
+  },
+  {
+    "id": "E01",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我喜欢组织活动、影响别人、做决策或推动一件事落地。",
+    "weights": {
+      "riasec_E": 1,
+      "leadership": 0.6,
+      "income": 0.25,
+      "city_opportunity": 0.25
+    }
+  },
+  {
+    "id": "E02",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我不排斥展示自己、表达观点、争取资源或谈判协调。",
+    "weights": {
+      "riasec_E": 1,
+      "leadership": 0.6,
+      "income": 0.25,
+      "city_opportunity": 0.25
+    }
+  },
+  {
+    "id": "E03",
+    "module": "riasec",
+    "type": "likert",
+    "text": "商业、管理、法律、市场、金融等社会运行规则会吸引我。",
+    "weights": {
+      "riasec_E": 1,
+      "leadership": 0.6,
+      "income": 0.25,
+      "city_opportunity": 0.25
+    }
+  },
+  {
+    "id": "E04",
+    "module": "riasec",
+    "type": "likert",
+    "text": "如果一个方向有更高收入上限，我愿意承担一定竞争压力。",
+    "weights": {
+      "riasec_E": 1,
+      "leadership": 0.6,
+      "income": 0.25,
+      "city_opportunity": 0.25
+    }
+  },
+  {
+    "id": "E05",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我愿意为明确目标制定计划，并带动别人一起完成。",
+    "weights": {
+      "riasec_E": 1,
+      "leadership": 0.6,
+      "income": 0.25,
+      "city_opportunity": 0.25
+    }
+  },
+  {
+    "id": "E06",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我能接受未来工作与客户、团队、政策或市场变化密切相关。",
+    "weights": {
+      "riasec_E": 1,
+      "leadership": 0.6,
+      "income": 0.25,
+      "city_opportunity": 0.25
+    }
+  },
+  {
+    "id": "C01",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我喜欢清晰的规则、表格、流程和可核对的结果。",
+    "weights": {
+      "riasec_C": 1,
+      "rule_execution": 0.6,
+      "office_data": 0.4,
+      "structure": 0.3
+    }
+  },
+  {
+    "id": "C02",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我能耐心处理数据、清单、证据、档案或标准化流程。",
+    "weights": {
+      "riasec_C": 1,
+      "rule_execution": 0.6,
+      "office_data": 0.4,
+      "structure": 0.3
+    }
+  },
+  {
+    "id": "C03",
+    "module": "riasec",
+    "type": "likert",
+    "text": "比起变化很大的工作，我更喜欢路径明确、要求清楚的任务。",
+    "weights": {
+      "riasec_C": 1,
+      "rule_execution": 0.6,
+      "office_data": 0.4,
+      "structure": 0.3
+    }
+  },
+  {
+    "id": "C04",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我愿意通过证书、考试、规则训练来换取稳定发展。",
+    "weights": {
+      "riasec_C": 1,
+      "rule_execution": 0.6,
+      "office_data": 0.4,
+      "structure": 0.3
+    }
+  },
+  {
+    "id": "C05",
+    "module": "riasec",
+    "type": "likert",
+    "text": "会计、审计、统计、行政、法务这类方向并不让我反感。",
+    "weights": {
+      "riasec_C": 1,
+      "rule_execution": 0.6,
+      "office_data": 0.4,
+      "structure": 0.3
+    }
+  },
+  {
+    "id": "C06",
+    "module": "riasec",
+    "type": "likert",
+    "text": "我做事时倾向于先建立步骤，再按顺序检查完成。",
+    "weights": {
+      "riasec_C": 1,
+      "rule_execution": 0.6,
+      "office_data": 0.4,
+      "structure": 0.3
+    }
+  },
+  {
+    "id": "AB01",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我学习数学、物理类内容时，能跟上推导和题型变化。",
+    "weights": {
+      "math_logic": 1,
+      "abstract_reasoning": 0.25
+    }
+  },
+  {
+    "id": "AB02",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我能把复杂问题拆成步骤，并找到关键条件。",
+    "weights": {
+      "math_logic": 1,
+      "abstract_reasoning": 0.25
+    }
+  },
+  {
+    "id": "AB03",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我对图表、数据、概率、统计信息比较敏感。",
+    "weights": {
+      "data_analysis": 1
+    }
+  },
+  {
+    "id": "AB04",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我能清楚表达自己的想法，写作或口头说明不太吃力。",
+    "weights": {
+      "language_expression": 1
+    }
+  },
+  {
+    "id": "AB05",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我读长文字、政策或案例时，能抓住重点。",
+    "weights": {
+      "language_expression": 1
+    }
+  },
+  {
+    "id": "AB06",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我愿意反复修改一段文字、报告或展示材料。",
+    "weights": {
+      "language_expression": 1
+    }
+  },
+  {
+    "id": "AB07",
+    "module": "abilities",
+    "type": "likert",
+    "text": "需要记忆大量概念、术语、流程时，我有耐心整理。",
+    "weights": {
+      "memory": 1,
+      "structure": 0.25
+    }
+  },
+  {
+    "id": "AB08",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我能把分散知识点归纳成框架或表格。",
+    "weights": {
+      "memory": 1,
+      "structure": 0.25
+    }
+  },
+  {
+    "id": "AB09",
+    "module": "abilities",
+    "type": "likert",
+    "text": "面对医学、生物、法律等记忆量大的内容，我不本能排斥。",
+    "weights": {
+      "memory": 1,
+      "structure": 0.25
+    }
+  },
+  {
+    "id": "AB10",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我愿意通过实验、操作、维修、搭建来理解知识。",
+    "weights": {
+      "hands_on": 1,
+      "technical_growth": 0.25
+    }
+  },
+  {
+    "id": "AB11",
+    "module": "abilities",
+    "type": "likert",
+    "text": "遇到设备或软件问题，我愿意自己试着排查。",
+    "weights": {
+      "hands_on": 1,
+      "technical_growth": 0.25
+    }
+  },
+  {
+    "id": "AB12",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我能接受课程里有实验报告、实训、课程设计等实践任务。",
+    "weights": {
+      "hands_on": 1,
+      "technical_growth": 0.25
+    }
+  },
+  {
+    "id": "AB13",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我能耐心听别人讲完，再做解释或回应。",
+    "weights": {
+      "communication": 1,
+      "helping": 0.25
+    }
+  },
+  {
+    "id": "AB14",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我在小组合作中通常能协调分工或补位。",
+    "weights": {
+      "communication": 1,
+      "helping": 0.25
+    }
+  },
+  {
+    "id": "AB15",
+    "module": "abilities",
+    "type": "likert",
+    "text": "面对情绪紧张的人，我不会立刻失去耐心。",
+    "weights": {
+      "communication": 1,
+      "helping": 0.25
+    }
+  },
+  {
+    "id": "AB16",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我可以为了一个长期目标持续半年以上稳定投入。",
+    "weights": {
+      "long_focus": 1,
+      "technical_growth": 0.2
+    }
+  },
+  {
+    "id": "AB17",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我能接受短期看不到明显回报，但长期积累价值的学习。",
+    "weights": {
+      "long_focus": 1,
+      "technical_growth": 0.2
+    }
+  },
+  {
+    "id": "AB18",
+    "module": "abilities",
+    "type": "likert",
+    "text": "我做题或做项目时，能在细节反复出错后继续调整。",
+    "weights": {
+      "long_focus": 1,
+      "technical_growth": 0.2
+    }
+  },
+  {
+    "id": "VAL01",
+    "module": "values",
+    "type": "likert",
+    "text": "我很看重未来职业的稳定性和可预期发展。",
+    "weights": {
+      "stability": 1
+    }
+  },
+  {
+    "id": "VAL02",
+    "module": "values",
+    "type": "likert",
+    "text": "我希望专业对应的就业出口清晰，不想毕业时选择太散。",
+    "weights": {
+      "employment_certainty": 1
+    }
+  },
+  {
+    "id": "VAL03",
+    "module": "values",
+    "type": "likert",
+    "text": "如果能进入体制内、国企、医院、学校等稳定平台，我会觉得安心。",
+    "weights": {
+      "public_sector": 1
+    }
+  },
+  {
+    "id": "VAL04",
+    "module": "values",
+    "type": "likert",
+    "text": "我愿意为了更高收入承受更强竞争和更快变化。",
+    "weights": {
+      "income": 1
+    }
+  },
+  {
+    "id": "VAL05",
+    "module": "values",
+    "type": "likert",
+    "text": "工作生活平衡对我很重要，不希望长期高强度透支。",
+    "weights": {
+      "work_life_balance": 1
+    }
+  },
+  {
+    "id": "VAL06",
+    "module": "values",
+    "type": "likert",
+    "text": "我希望职业能帮助别人、服务社会或带来实际价值。",
+    "weights": {
+      "helping": 1
+    }
+  },
+  {
+    "id": "VAL07",
+    "module": "values",
+    "type": "likert",
+    "text": "我希望未来有较强的城市机会和平台选择。",
+    "weights": {
+      "city_opportunity": 1
+    }
+  },
+  {
+    "id": "VAL08",
+    "module": "values",
+    "type": "likert",
+    "text": "我希望专业有技术壁垒，越学越值钱。",
+    "weights": {
+      "technical_growth": 1
+    }
+  },
+  {
+    "id": "VAL09",
+    "module": "values",
+    "type": "likert",
+    "text": "我不太喜欢完全依赖人脉、家庭资源或销售能力的发展路径。",
+    "weights": {
+      "family_resource_dependency": 1
+    }
+  },
+  {
+    "id": "VAL10",
+    "module": "values",
+    "type": "likert",
+    "text": "我愿意通过考试、证书、编制或职称来换取确定性。",
+    "weights": {
+      "public_sector": 1
+    }
+  },
+  {
+    "id": "VAL11",
+    "module": "values",
+    "type": "likert",
+    "text": "如果一个专业社会认可度高，即使学习辛苦我也能接受。",
+    "weights": {
+      "stability": 1
+    }
+  },
+  {
+    "id": "VAL12",
+    "module": "values",
+    "type": "likert",
+    "text": "我更希望工作内容专业、清楚，而不是每天处理复杂人情。",
+    "weights": {
+      "office_data": 1
+    }
+  },
+  {
+    "id": "VAL13",
+    "module": "values",
+    "type": "rank",
+    "text": "请按点击顺序选出你最看重的 3-5 个职业价值。",
+    "weights": {
+      "stability": 0.5,
+      "income": 0.5,
+      "work_life_balance": 0.5,
+      "city_opportunity": 0.4,
+      "helping": 0.4,
+      "technical_growth": 0.5
+    },
+    "options": [
+      {
+        "value": "stability",
+        "label": "稳定和就业确定性"
+      },
+      {
+        "value": "income",
+        "label": "收入上限"
+      },
+      {
+        "value": "work_life_balance",
+        "label": "工作生活平衡"
+      },
+      {
+        "value": "city_opportunity",
+        "label": "城市与平台机会"
+      },
+      {
+        "value": "helping",
+        "label": "帮助他人或社会价值"
+      },
+      {
+        "value": "technical_growth",
+        "label": "技术壁垒和长期成长"
+      }
+    ],
+    "hint": "点击一次加入排序，再点一次取消，不需要拖拽。"
+  },
+  {
+    "id": "VAL14",
+    "module": "values",
+    "type": "likert",
+    "text": "如果稳定和收入不能同时满足，我更倾向先保证稳定。",
+    "weights": {
+      "stability": 0.8,
+      "income": -0.2
+    }
+  },
+  {
+    "id": "VAL15",
+    "module": "values",
+    "type": "likert",
+    "text": "如果工作很有意义但收入一般，我仍可能长期坚持。",
+    "weights": {
+      "helping": 0.6,
+      "income": -0.1
+    }
+  },
+  {
+    "id": "VAL16",
+    "module": "values",
+    "type": "likert",
+    "text": "我愿意为了专业成长接受前几年较辛苦的训练。",
+    "weights": {
+      "technical_growth": 0.7,
+      "work_intensity": 0.2
+    }
+  },
+  {
+    "id": "ENV01",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受未来在医院、检验科、影像科、康复科等环境工作。",
+    "weights": {
+      "hospital": 1
+    }
+  },
+  {
+    "id": "ENV02",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受学校、培训、班级管理或学生沟通场景。",
+    "weights": {
+      "school": 1
+    }
+  },
+  {
+    "id": "ENV03",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受工厂、车间、工程现场或设备运维场景。",
+    "weights": {
+      "factory": 1
+    }
+  },
+  {
+    "id": "ENV04",
+    "module": "environment",
+    "type": "likert",
+    "text": "我喜欢办公室、数据、表格、系统、文档为主的工作环境。",
+    "weights": {
+      "office_data": 1
+    }
+  },
+  {
+    "id": "ENV05",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受基层、县城、乡镇或一线服务岗位作为起步。",
+    "weights": {
+      "grassroots": 1
+    }
+  },
+  {
+    "id": "ENV06",
+    "module": "environment",
+    "type": "likert",
+    "text": "我不排斥偶尔倒班、值班或按项目周期加班。",
+    "weights": {
+      "night_shift": 1
+    }
+  },
+  {
+    "id": "ENV07",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受长期备考、考证、职称评审带来的压力。",
+    "weights": {
+      "exam_path": 1
+    }
+  },
+  {
+    "id": "ENV08",
+    "module": "environment",
+    "type": "likert",
+    "text": "我希望未来工作更多面对系统、数据或专业问题，而不是大量陌生人。",
+    "weights": {
+      "office_data": 1
+    }
+  },
+  {
+    "id": "ENV09",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受需要穿工装、做实验、进实验室或遵守严格安全规范。",
+    "weights": {
+      "factory": 1
+    }
+  },
+  {
+    "id": "ENV10",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受和病人、家属或服务对象进行耐心沟通。",
+    "weights": {
+      "hospital": 1
+    }
+  },
+  {
+    "id": "ENV11",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受教师岗位中备课、讲课、班级事务等重复投入。",
+    "weights": {
+      "school": 1
+    }
+  },
+  {
+    "id": "ENV12",
+    "module": "environment",
+    "type": "likert",
+    "text": "我希望工作地点尽量在城市或交通便利区域。",
+    "weights": {
+      "city_opportunity": 1
+    }
+  },
+  {
+    "id": "ENV13",
+    "module": "environment",
+    "type": "likert",
+    "text": "我能接受职业早期从基础岗位做起，逐步积累经验。",
+    "weights": {
+      "technical_growth": 1
+    }
+  },
+  {
+    "id": "ENV14",
+    "module": "environment",
+    "type": "likert",
+    "text": "我不希望未来工作长期处在强噪音、强体力或高风险现场。",
+    "weights": {
+      "work_intensity": 1
+    }
+  },
+  {
+    "id": "RSK01",
+    "module": "risk",
+    "type": "likert",
+    "text": "如果专业或学校学费较高，我会明显担心家庭压力。",
+    "weights": {
+      "high_tuition": 1
+    }
+  },
+  {
+    "id": "RSK02",
+    "module": "risk",
+    "type": "likert",
+    "text": "我能接受为了更好就业继续考研或深造。",
+    "weights": {
+      "postgraduate_required": 1
+    }
+  },
+  {
+    "id": "RSK03",
+    "module": "risk",
+    "type": "likert",
+    "text": "如果一个行业受 AI 自动化影响较大，我会倾向避开。",
+    "weights": {
+      "ai_risk": 1
+    }
+  },
+  {
+    "id": "RSK04",
+    "module": "risk",
+    "type": "likert",
+    "text": "我能接受行业周期波动，只要长期机会仍然存在。",
+    "weights": {
+      "industry_cycle": 1
+    }
+  },
+  {
+    "id": "RSK05",
+    "module": "risk",
+    "type": "likert",
+    "text": "我不希望专业发展过度依赖家庭资源、人脉或高消费社交。",
+    "weights": {
+      "family_resource_dependency": 1
+    }
+  },
+  {
+    "id": "RSK06",
+    "module": "risk",
+    "type": "likert",
+    "text": "我能接受被调剂到同一专业类中不那么热门的方向。",
+    "weights": {
+      "adjustment_risk": 1
+    }
+  },
+  {
+    "id": "RSK07",
+    "module": "risk",
+    "type": "likert",
+    "text": "如果学校离家较远但专业合适，我可以认真考虑。",
+    "weights": {
+      "far_region": 1
+    }
+  },
+  {
+    "id": "RSK08",
+    "module": "risk",
+    "type": "likert",
+    "text": "我能接受未来几年学习或工作强度比较高。",
+    "weights": {
+      "work_intensity": 1
+    }
+  },
+  {
+    "id": "RSK09",
+    "module": "risk",
+    "type": "likert",
+    "text": "如果一个专业本科就业一般但深造后更好，我仍愿意评估。",
+    "weights": {
+      "postgraduate_required": 1
+    }
+  },
+  {
+    "id": "RSK10",
+    "module": "risk",
+    "type": "likert",
+    "text": "我会优先避开毕业出口特别不确定的专业。",
+    "weights": {
+      "employment_certainty": 1
+    }
+  },
+  {
+    "id": "RSK11",
+    "module": "risk",
+    "type": "likert",
+    "text": "我能接受新兴技术方向的不确定性和持续学习压力。",
+    "weights": {
+      "technical_growth": 1
+    }
+  },
+  {
+    "id": "RSK12",
+    "module": "risk",
+    "type": "likert",
+    "text": "我不太能接受民办、中外合作或高收费项目作为主要方案。",
+    "weights": {
+      "high_tuition": 1
+    }
+  },
+  {
+    "id": "RSK13",
+    "module": "risk",
+    "type": "likert",
+    "text": "如果一个专业名字好听但就业路径不清，我会保持谨慎。",
+    "weights": {
+      "employment_certainty": 1
+    }
+  },
+  {
+    "id": "RSK14",
+    "module": "risk",
+    "type": "likert",
+    "text": "我愿意为更稳妥的录取结果接受专业热度下降一点。",
+    "weights": {
+      "adjustment_risk": 1
+    }
+  },
+  {
+    "id": "COG01",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "遇到问题时，我更自然的方式是：",
+    "weights": {
+      "facts": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "先看事实、数据和已知条件"
+      },
+      {
+        "value": "B",
+        "label": "先想可能性、趋势和整体方向"
+      }
+    ]
+  },
+  {
+    "id": "COG02",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "做决定时，我更看重：",
+    "weights": {
+      "logic": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "逻辑一致、规则清楚、利弊明确"
+      },
+      {
+        "value": "B",
+        "label": "人的感受、关系影响和实际体验"
+      }
+    ]
+  },
+  {
+    "id": "COG03",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "面对学习任务时，我更喜欢：",
+    "weights": {
+      "structure": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "计划清楚、步骤明确、按时完成"
+      },
+      {
+        "value": "B",
+        "label": "保留弹性、边探索边调整"
+      }
+    ]
+  },
+  {
+    "id": "COG04",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "在小组里，我更舒服的状态是：",
+    "weights": {
+      "independent": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "先独立想清楚，再交流结论"
+      },
+      {
+        "value": "B",
+        "label": "边讨论边形成想法"
+      }
+    ]
+  },
+  {
+    "id": "COG05",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "我更容易被哪类课程吸引：",
+    "weights": {
+      "logic": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "有确定方法、例题和标准答案的课程"
+      },
+      {
+        "value": "B",
+        "label": "有开放讨论、案例和多种解释的课程"
+      }
+    ]
+  },
+  {
+    "id": "COG06",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "处理信息时，我通常：",
+    "weights": {
+      "structure": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "喜欢整理成表格、清单、流程"
+      },
+      {
+        "value": "B",
+        "label": "喜欢先看大图，再补充细节"
+      }
+    ]
+  },
+  {
+    "id": "COG07",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "当别人提出反对意见时，我更倾向：",
+    "weights": {
+      "logic": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "先判断证据是否充分"
+      },
+      {
+        "value": "B",
+        "label": "先理解对方为什么这样想"
+      }
+    ]
+  },
+  {
+    "id": "COG08",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "选择专业时，我更需要：",
+    "weights": {
+      "facts": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "现实数据、分数、就业和课程信息"
+      },
+      {
+        "value": "B",
+        "label": "未来想象、兴趣体验和成长空间"
+      }
+    ]
+  },
+  {
+    "id": "COG09",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "面对规则和自由，我更偏向：",
+    "weights": {
+      "structure": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "规则明确会让我安心"
+      },
+      {
+        "value": "B",
+        "label": "自由探索会让我更有动力"
+      }
+    ]
+  },
+  {
+    "id": "COG10",
+    "module": "cognitive",
+    "type": "choice",
+    "text": "长时间学习时，我更适合：",
+    "weights": {
+      "independent": 0.8
+    },
+    "options": [
+      {
+        "value": "A",
+        "label": "安静独立推进"
+      },
+      {
+        "value": "B",
+        "label": "和同伴互相提醒、讨论推进"
+      }
+    ]
+  },
+  {
+    "id": "CON01",
+    "module": "consistency",
+    "type": "likert",
+    "text": "我愿意长期学习数学、数据或工程技术类课程。",
+    "weights": {
+      "math_logic": 1
+    }
+  },
+  {
+    "id": "CON02",
+    "module": "consistency",
+    "type": "likert",
+    "text": "我基本不能接受任何数学、数据或抽象推理压力。",
+    "weights": {
+      "math_logic": 1
+    }
+  },
+  {
+    "id": "CON03",
+    "module": "consistency",
+    "type": "likert",
+    "text": "我愿意在医疗、教育或公共服务场景中与人长期互动。",
+    "weights": {
+      "communication": 1
+    }
+  },
+  {
+    "id": "CON04",
+    "module": "consistency",
+    "type": "likert",
+    "text": "我非常排斥所有需要持续沟通、解释或服务对象的工作。",
+    "weights": {
+      "communication": 1
+    }
+  },
+  {
+    "id": "CON05",
+    "module": "consistency",
+    "type": "likert",
+    "text": "我希望专业选择尽量稳妥，不追逐短期热门。",
+    "weights": {
+      "stability": 1
+    }
+  },
+  {
+    "id": "CON06",
+    "module": "consistency",
+    "type": "likert",
+    "text": "即使专业就业不确定，只要名字热门或听起来高级，我也愿意优先选。",
+    "weights": {
+      "employment_certainty": 1
+    }
+  },
+  {
+    "id": "FAM01",
+    "module": "family",
+    "type": "choice",
+    "text": "家庭对学费预算的基本底线是：",
+    "weights": {
+      "high_tuition": -0.5
+    },
+    "options": [
+      {
+        "value": "budget_8000",
+        "label": "希望年学费约 8000 元以内"
+      },
+      {
+        "value": "budget_12000",
+        "label": "可接受 8000-12000 元"
+      },
+      {
+        "value": "budget_20000",
+        "label": "可讨论 12000-20000 元"
+      },
+      {
+        "value": "budget_high",
+        "label": "高收费也可个案讨论"
+      }
+    ]
+  },
+  {
+    "id": "FAM02",
+    "module": "family",
+    "type": "multi",
+    "text": "关于民办本科，家庭态度是：",
+    "weights": {
+      "high_tuition": -0.1
+    },
+    "options": [
+      {
+        "value": "reject_private",
+        "label": "明确不接受民办"
+      },
+      {
+        "value": "case_private",
+        "label": "只在保底时个案讨论"
+      },
+      {
+        "value": "accept_private",
+        "label": "可以接受"
+      }
+    ]
+  },
+  {
+    "id": "FAM03",
+    "module": "family",
+    "type": "multi",
+    "text": "关于中外合作、高收费或国际项目，家庭态度是：",
+    "weights": {
+      "high_tuition": -0.1
+    },
+    "options": [
+      {
+        "value": "reject_cf",
+        "label": "明确不接受中外合作/高收费"
+      },
+      {
+        "value": "case_cf",
+        "label": "只接受低风险优质项目"
+      },
+      {
+        "value": "accept_cf",
+        "label": "可以讨论"
+      }
+    ]
+  },
+  {
+    "id": "FAM04",
+    "module": "family",
+    "type": "multi",
+    "text": "关于离家距离和地域，家庭态度是：",
+    "weights": {
+      "high_tuition": -0.1
+    },
+    "options": [
+      {
+        "value": "reject_far",
+        "label": "不接受太远地区"
+      },
+      {
+        "value": "prefer_near",
+        "label": "优先安徽及周边"
+      },
+      {
+        "value": "accept_far",
+        "label": "专业合适可去较远地区"
+      }
+    ]
+  },
+  {
+    "id": "FAM05",
+    "module": "family",
+    "type": "multi",
+    "text": "关于护理学类，家庭态度是：",
+    "weights": {
+      "high_tuition": -0.1
+    },
+    "options": [
+      {
+        "value": "reject_nursing",
+        "label": "明确不接受护理"
+      },
+      {
+        "value": "case_nursing",
+        "label": "只作为保底讨论"
+      },
+      {
+        "value": "accept_nursing",
+        "label": "可以接受护理"
+      }
+    ]
+  },
+  {
+    "id": "FAM06",
+    "module": "family",
+    "type": "multi",
+    "text": "关于农学、林学、食品、环境等相对冷门方向，家庭态度是：",
+    "weights": {
+      "high_tuition": -0.1
+    },
+    "options": [
+      {
+        "value": "reject_agriculture",
+        "label": "明确不接受农林冷门"
+      },
+      {
+        "value": "case_agriculture",
+        "label": "看学校和就业再讨论"
+      },
+      {
+        "value": "accept_agriculture",
+        "label": "能接受务实选择"
+      }
+    ]
+  },
+  {
+    "id": "FAM07",
+    "module": "family",
+    "type": "multi",
+    "text": "关于医学相关专业，家庭态度是：",
+    "weights": {
+      "high_tuition": -0.1
+    },
+    "options": [
+      {
+        "value": "reject_medical",
+        "label": "不接受医学相关方向"
+      },
+      {
+        "value": "tech_medical",
+        "label": "可接受医学技术，不优先临床"
+      },
+      {
+        "value": "accept_medical",
+        "label": "可以接受医学方向"
+      }
+    ]
+  },
+  {
+    "id": "FAM08",
+    "module": "family",
+    "type": "multi",
+    "text": "关于考研或长期深造依赖，家庭态度是：",
+    "weights": {
+      "high_tuition": -0.1
+    },
+    "options": [
+      {
+        "value": "reject_postgrad",
+        "label": "希望本科就业，不接受强考研依赖"
+      },
+      {
+        "value": "case_postgrad",
+        "label": "可接受有必要的深造"
+      },
+      {
+        "value": "accept_postgrad",
+        "label": "支持考研深造"
+      }
+    ]
+  },
+  {
+    "id": "FAM09",
+    "module": "family",
+    "type": "rank",
+    "text": "家庭更看重哪类结果？请按点击顺序选择 3 项。",
+    "weights": {
+      "stability": 0.4,
+      "public_sector": 0.3,
+      "income": 0.2,
+      "city_opportunity": 0.2
+    },
+    "options": [
+      {
+        "value": "stable_job",
+        "label": "稳定工作"
+      },
+      {
+        "value": "public_sector",
+        "label": "体制/国企/医院/学校"
+      },
+      {
+        "value": "income",
+        "label": "收入改善"
+      },
+      {
+        "value": "near_home",
+        "label": "离家近"
+      },
+      {
+        "value": "school_level",
+        "label": "学校层次"
+      },
+      {
+        "value": "major_fit",
+        "label": "专业适配"
+      }
+    ],
+    "hint": "点击排序，排序靠前代表家庭更重视。"
+  },
+  {
+    "id": "FAM10",
+    "module": "family",
+    "type": "likert",
+    "text": "家庭能接受专业选择以孩子本人兴趣为主，家长只设底线。",
+    "weights": {
+      "family_support": 1
+    }
+  },
+  {
+    "id": "FAM11",
+    "module": "family",
+    "type": "likert",
+    "text": "家庭希望优先避开就业出口不清、行业波动大的方向。",
+    "weights": {
+      "employment_certainty": 0.5,
+      "industry_cycle": -0.3
+    }
+  },
+  {
+    "id": "FAM12",
+    "module": "family",
+    "type": "likert",
+    "text": "家庭愿意和孩子一起复盘结果，而不是只按单一分数或热门专业决定。",
+    "weights": {
+      "family_support": 0.8,
+      "logic": 0.2
+    }
+  }
+];
+const MODULE_LABELS={riasec:"兴趣地图",abilities:"能力倾向",values:"职业价值观",environment:"工作环境",risk:"风险承受",cognitive:"认知偏好",consistency:"一致性校验",family:"家庭约束"};
+const SCORE_LABELS={math_logic:"数学逻辑",language_expression:"语言表达",memory:"记忆理解",hands_on:"动手实践",communication:"沟通共情",long_focus:"长期专注",abstract_reasoning:"抽象推理",rule_execution:"规则执行",stability:"稳定",income:"收入",public_sector:"编制/体制",work_life_balance:"生活平衡",city_opportunity:"城市机会",technical_growth:"技术成长",hospital:"医院",school:"学校",factory:"工厂/现场",office_data:"办公室数据",night_shift:"倒班",grassroots:"基层",exam_path:"长期考试",high_tuition:"高学费风险",postgraduate_required:"考研依赖",ai_risk:"AI 替代风险",industry_cycle:"行业周期",family_resource_dependency:"家庭资源依赖",adjustment_risk:"调剂风险",far_region:"远距离风险",work_intensity:"工作强度",facts:"事实细节",logic:"逻辑判断",structure:"计划结构",independent:"独立思考"};
+const MAJOR_MODELS=[{name:"电气类",weights:{riasec_R:.25,riasec_I:.15,math_logic:.15,stability:.15,technical_growth:.15,factory:.05,night_shift:-.05,high_tuition:-.05},typical:"电气工程及其自动化、智能电网信息工程",exit:"电网、电力设备、制造业能源岗位",note:"就业确定性较强，普通家庭友好，需确认现场/倒班接受度。"},{name:"自动化类",weights:{riasec_R:.2,riasec_I:.2,math_logic:.15,hands_on:.1,technical_growth:.15,factory:.05,ai_risk:-.03},typical:"自动化、机器人工程、智能装备",exit:"制造业、机器人、控制系统",note:"应用技术属性强，和制造业/机器人/控制系统相关。"},{name:"电子信息类",weights:{riasec_I:.25,math_logic:.2,abstract_reasoning:.15,technical_growth:.15,income:.1,ai_risk:-.03},typical:"电子信息工程、通信工程、微电子",exit:"通信、芯片、硬件、嵌入式",note:"技术成长性强，数学和抽象能力要求较高。"},{name:"计算机类",weights:{riasec_I:.25,math_logic:.25,abstract_reasoning:.15,income:.1,technical_growth:.15,ai_risk:-.08,long_focus:.1},typical:"计算机科学与技术、软件工程、数据科学",exit:"软件开发、数据、测试、信息化",note:"上限高但 AI 和竞争压力明显，需长期自学。"},{name:"机械类",weights:{riasec_R:.25,hands_on:.2,factory:.15,technical_growth:.1,stability:.1,income:.05},typical:"机械设计制造及其自动化、智能制造",exit:"装备制造、工艺、设备、质量",note:"工程实践强，需确认是否接受工厂/现场环境。"},{name:"能源动力类",weights:{riasec_R:.22,riasec_I:.12,engineering:.18,stability:.12,factory:.08,technical_growth:.1},typical:"能源与动力工程、新能源科学与工程",exit:"电力、能源、设备、热能系统",note:"贴近实体产业，适合务实技术路线。"},{name:"数学/统计类",weights:{riasec_I:.2,math_logic:.28,data_analysis:.18,abstract_reasoning:.18,postgraduate_required:-.08},typical:"数学与应用数学、统计学、应用统计",exit:"数据分析、金融风控、教师、深造",note:"基础学科弹性大，但对数学能力和深造意愿要求高。"},{name:"医学技术类",weights:{riasec_I:.15,riasec_S:.2,memory:.15,hospital:.2,stability:.15,postgraduate_required:-.03},typical:"医学检验技术、医学影像技术、康复治疗学",exit:"医院医技科室、检验机构、康复机构",note:"比临床路径短，就业场景明确，需接受医院环境。"},{name:"药学类",weights:{riasec_I:.2,memory:.2,hospital:.08,stability:.12,postgraduate_required:-.08},typical:"药学、临床药学、中药学",exit:"药企、医院药房、药监",note:"偏记忆和实验，部分路径考研收益明显。"},{name:"师范类",weights:{riasec_S:.25,communication:.2,school:.2,stability:.15,public_sector:.15},typical:"数学与应用数学(师范)、英语(师范)、汉语言文学(师范)",exit:"中小学教师、教育机构、教研",note:"稳定性较强，但需接受长期和学生互动及教师编竞争。"},{name:"财会审计类",weights:{riasec_C:.25,rule_execution:.2,office_data:.2,stability:.1,public_sector:.12,ai_risk:-.08},typical:"会计学、审计学、财务管理",exit:"财务、审计、税务、国企行政财务",note:"规则和证书路径清晰，但基础岗位受自动化影响。"},{name:"法学类",weights:{riasec_E:.12,riasec_C:.15,language_expression:.2,memory:.2,public_sector:.15,postgraduate_required:-.05},typical:"法学、知识产权",exit:"法务、公检法相关考试、律师助理",note:"适合表达、记忆、规则理解强的人，司法考试压力较高。"},{name:"汉语言文学类",weights:{riasec_A:.18,language_expression:.22,memory:.12,public_sector:.12,school:.12},typical:"汉语言文学、秘书学",exit:"教师、文秘、行政、内容",note:"考公考编兼容度较好，但需要表达和长期阅读。"},{name:"公共管理类",weights:{riasec_C:.16,riasec_S:.12,public_sector:.2,rule_execution:.18,stability:.12},typical:"行政管理、公共事业管理",exit:"考公、事业单位、基层治理",note:"专业壁垒一般，适合强体制目标但需谨慎保底。"},{name:"金融类",weights:{riasec_E:.25,income:.2,city_opportunity:.15,family_resource_dependency:-.2,stability:-.05},typical:"金融学、金融工程、投资学",exit:"银行、证券、保险、风控",note:"资源和学校层次依赖强，普通本科需谨慎。"},{name:"新闻传播类",weights:{riasec_A:.25,language_expression:.2,city_opportunity:.1,ai_risk:-.2,stability:-.08},typical:"新闻学、网络与新媒体、传播学",exit:"内容运营、媒体、品牌、公关",note:"表达兴趣强者可探索，但行业下行和 AI 冲击明显。"},{name:"生化环材类",weights:{riasec_I:.22,memory:.12,postgraduate_required:-.22,stability:-.05},typical:"生物工程、化学、材料、环境",exit:"实验室、检测、工艺、环保",note:"强依赖深造，本科直接就业要谨慎。"},{name:"土木类",weights:{riasec_R:.18,factory:.14,grassroots:.12,work_intensity:-.12,stability:.04},typical:"土木工程、工程管理",exit:"施工、设计、造价、项目管理",note:"行业周期与现场强度需要重点核查。"},{name:"护理学类",weights:{riasec_S:.22,hospital:.25,communication:.15,night_shift:-.2,work_intensity:-.12,stability:.15},typical:"护理学、助产学",exit:"医院、护理机构、社区医疗",note:"就业稳定但工作强度和倒班压力要确认。"}];
+let state=loadState()||{current:0,answers:{},completed:false,result:null};
+function saveState(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}function loadState(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY))}catch{return null}}function clearState(){localStorage.removeItem(STORAGE_KEY);state={current:0,answers:{},completed:false,result:null};show("welcome");toast("已清除本地进度")}function show(id){for(const el of document.querySelectorAll("main > section"))el.classList.add("hidden");document.getElementById(id).classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})}
+function renderQuestion(){const q=QUESTIONS[state.current];document.getElementById("sectionName").textContent=MODULE_LABELS[q.module]||q.module;document.getElementById("progressText").textContent=`${state.current+1} / ${QUESTIONS.length}`;document.getElementById("progressBar").style.width=`${((state.current+1)/QUESTIONS.length)*100}%`;const saved=state.answers[q.id];document.getElementById("questionCard").innerHTML=`<p class="eyebrow">第 ${state.current+1} 题 · ${q.id}</p><h2>${q.text}</h2>${q.hint?`<p class="hint">${q.hint}</p>`:""}${renderInput(q,saved)}`;document.getElementById("prevBtn").disabled=state.current===0;document.getElementById("nextBtn").textContent=state.current===QUESTIONS.length-1?"生成结果":"下一题"}
+function renderInput(q,saved){if(q.type==="likert")return `<div class="scale">${[1,2,3,4,5].map(v=>`<button class="option ${saved===v?'selected':''}" data-value="${v}">${["非常不符合","不太符合","一般","比较符合","非常符合"][v-1]}</button>`).join("")}</div>`;if(q.type==="choice")return `<div class="scale rank-options">${q.options.map(o=>`<button class="option ${saved===o.value?'selected':''}" data-value="${o.value}">${o.label}</button>`).join("")}</div>`;if(q.type==="multi"){const s=Array.isArray(saved)?saved:[];return `<div class="scale multi-options">${q.options.map(o=>`<button class="option ${s.includes(o.value)?'selected':''}" data-value="${o.value}">${o.label}</button>`).join("")}</div>`}if(q.type==="rank"){const s=Array.isArray(saved)?saved:[];return `<div class="scale rank-options">${q.options.map(o=>`<button class="option ${s.includes(o.value)?'selected':''}" data-value="${o.value}">${s.includes(o.value)?s.indexOf(o.value)+1+'. ':''}${o.label}</button>`).join("")}</div>`}return ""}
+function setAnswer(q,value){if(q.type==="likert")state.answers[q.id]=Number(value);else if(q.type==="choice")state.answers[q.id]=value;else if(q.type==="multi"){const a=Array.isArray(state.answers[q.id])?[...state.answers[q.id]]:[];const i=a.indexOf(value);i>=0?a.splice(i,1):a.push(value);state.answers[q.id]=a}else if(q.type==="rank"){const a=Array.isArray(state.answers[q.id])?[...state.answers[q.id]]:[];const i=a.indexOf(value);i>=0?a.splice(i,1):a.push(value);state.answers[q.id]=a}saveState();renderQuestion()}
+function nextQuestion(){if(state.current<QUESTIONS.length-1){state.current++;saveState();renderQuestion()}else{show("loading");setTimeout(()=>{state.result=calculateResult();state.completed=true;saveState();renderResults();show("results")},1200)}}function prevQuestion(){if(state.current>0){state.current--;saveState();renderQuestion()}}
+function addWeighted(raw,key,value,weight){raw[key]=(raw[key]||0)+value*weight}function normalizeScores(raw){const out={};for(const [k,v] of Object.entries(raw))out[k]=Math.max(0,Math.min(100,Math.round((v/30)*100)));return out}function calculateScores(){const raw={};for(const q of QUESTIONS){const ans=state.answers[q.id];if(ans==null)continue;let value=0;if(q.type==="likert")value=Number(ans);else if(q.type==="choice")value=ans==="A"?5:3;else if(q.type==="multi")value=Array.isArray(ans)?Math.min(5,ans.length||1):0;else if(q.type==="rank"){const arr=Array.isArray(ans)?ans:[];arr.forEach((k,i)=>addWeighted(raw,k,Math.max(1,5-i),1));value=Math.min(5,arr.length)}for(const [k,w] of Object.entries(q.weights||{}))addWeighted(raw,k,value,w)}const normalized=normalizeScores(raw);for(const k of Object.keys(SCORE_LABELS))if(normalized[k]===undefined)normalized[k]=50;for(const k of ["riasec_R","riasec_I","riasec_A","riasec_S","riasec_E","riasec_C"])if(normalized[k]===undefined)normalized[k]=50;return{raw,normalized}}
+function score(scores,key){return scores.normalized[key]??50}function modelScore(model,scores){let total=58;for(const [k,w] of Object.entries(model.weights))total+=(score(scores,k)-50)*w;return Math.max(0,Math.min(100,Math.round(total)))}function classifyRecommendations(scores){const scored=MAJOR_MODELS.map(m=>({...m,score:modelScore(m,scores)})).sort((a,b)=>b.score-a.score);return{recommended:scored.filter(x=>x.score>=64).slice(0,8),cautious:scored.filter(x=>x.score>=55&&x.score<64),notRecommended:scored.filter(x=>x.score<55)}}
+function makeSummary(scores,recs){const tags=[];if(score(scores,"stability")>=58)tags.push("稳定积累型");if(score(scores,"riasec_R")>=58||score(scores,"riasec_I")>=58)tags.push("应用技术型");if(score(scores,"riasec_C")>=58)tags.push("规则秩序型");if(tags.length<3)tags.push("现实导向");while(tags.length<3)tags.push("稳妥探索型");return{profile_tags:tags.slice(0,3),decision_clarity:Math.max(35,Math.min(96,Math.round(Object.keys(state.answers).length/QUESTIONS.length*70+24))),constraint_clarity:Math.max(30,Math.min(95,Math.round(QUESTIONS.filter(q=>q.module==="family"&&state.answers[q.id]!==undefined).length/12*65+28))),top_directions:recs.recommended.slice(0,5).map(x=>x.name)}}
+function shapeScores(scores){return{riasec:{R:score(scores,"riasec_R"),I:score(scores,"riasec_I"),A:score(scores,"riasec_A"),S:score(scores,"riasec_S"),E:score(scores,"riasec_E"),C:score(scores,"riasec_C")},abilities:{math_logic:score(scores,"math_logic"),language_expression:score(scores,"language_expression"),memory:score(scores,"memory"),hands_on:score(scores,"hands_on"),communication:score(scores,"communication"),long_focus:score(scores,"long_focus"),abstract_reasoning:score(scores,"abstract_reasoning"),rule_execution:score(scores,"rule_execution")},values:{stability:score(scores,"stability"),income:score(scores,"income"),public_sector:score(scores,"public_sector"),work_life_balance:score(scores,"work_life_balance"),city_opportunity:score(scores,"city_opportunity"),technical_growth:score(scores,"technical_growth")},environment:{hospital:score(scores,"hospital"),school:score(scores,"school"),factory:score(scores,"factory"),office_data:score(scores,"office_data"),night_shift:score(scores,"night_shift"),grassroots:score(scores,"grassroots"),exam_path:score(scores,"exam_path")},risk:{high_tuition:score(scores,"high_tuition"),postgraduate_required:score(scores,"postgraduate_required"),ai_risk:score(scores,"ai_risk"),industry_cycle:score(scores,"industry_cycle"),family_resource_dependency:score(scores,"family_resource_dependency"),adjustment_risk:score(scores,"adjustment_risk"),far_region:score(scores,"far_region"),work_intensity:score(scores,"work_intensity")},cognitive:{independent:score(scores,"independent"),facts:score(scores,"facts"),logic:score(scores,"logic"),structure:score(scores,"structure")}}}
+function deriveConstraints(){const b=state.answers.FAM01;return{max_tuition:b==="budget_8000"?8000:b==="budget_12000"?12000:b==="budget_20000"?20000:null,accept_private_school:!((state.answers.FAM02||[]).includes("reject_private")),accept_chinese_foreign:!((state.answers.FAM03||[]).includes("reject_cf")),accept_far_region:!((state.answers.FAM04||[]).includes("reject_far")),accept_nursing:!((state.answers.FAM05||[]).includes("reject_nursing")),accept_agriculture:!((state.answers.FAM06||[]).includes("reject_agriculture")),accept_medical:!((state.answers.FAM07||[]).includes("reject_medical")),accept_postgraduate_required:!((state.answers.FAM08||[]).includes("reject_postgrad"))}}
+function deriveConflicts(scores,recs){const c=[],x=deriveConstraints();if(score(scores,"hospital")>=62&&!x.accept_medical)c.push({type:"兴趣 vs 家庭约束",text:"本人对医疗场景接受度较高，但家庭不接受医学方向。建议优先看医学技术外的稳定理工方向。"});if(score(scores,"riasec_I")>=64&&!x.accept_postgraduate_required)c.push({type:"兴趣 vs 风险",text:"研究型兴趣较高，但不接受考研依赖。生化环材、心理学、临床医学需降权。"});if(score(scores,"hospital")>=60&&score(scores,"night_shift")<=38)c.push({type:"兴趣 vs 就业现实",text:"医疗相关兴趣存在，但对倒班和值班接受度偏低，护理和临床相关方向需谨慎。"});if(!x.accept_private_school||!x.accept_chinese_foreign)c.push({type:"家庭期待 vs 分数现实",text:"家庭对高收费项目设定硬底线，后续筛选应排除民办高收费和中外合作项目。"});return c}function applyHardExclusions(recs,constraints){const e=new Set(recs.notRecommended.map(x=>x.name));if(!constraints.accept_chinese_foreign)e.add("高收费中外合作");if(!constraints.accept_private_school)e.add("高收费民办本科");if(!constraints.accept_nursing)e.add("护理学类");if(!constraints.accept_agriculture)e.add("农林冷门方向");if(!constraints.accept_postgraduate_required)e.add("强考研依赖方向");return[...e]}
+function calculateResult(){const scores=calculateScores(),recs=classifyRecommendations(scores),constraints=deriveConstraints();return{version:"1.0",candidate:"candidate_anhui_2026_physics_530_95924",test_mode:"deep_126",weights:{riasec:.3,abilities:.2,values:.2,environment:.15,risk:.1,cognitive:.05},summary:makeSummary(scores,recs),scores:shapeScores(scores),recommended_major_categories:recs.recommended.map(x=>x.name),cautious_major_categories:recs.cautious.map(x=>x.name),excluded_major_categories:applyHardExclusions(recs,constraints),constraints,conflicts:deriveConflicts(scores,recs),raw_answers:state.answers}}
+function activeScoresFromResult(result){return{normalized:{riasec_R:result.scores.riasec.R,riasec_I:result.scores.riasec.I,riasec_A:result.scores.riasec.A,riasec_S:result.scores.riasec.S,riasec_E:result.scores.riasec.E,riasec_C:result.scores.riasec.C,...result.scores.abilities,...result.scores.values,...result.scores.environment,...result.scores.risk,...result.scores.cognitive}}}function bar(label,value){return `<div class="bar-row"><span>${label}</span><div class="bar"><i style="width:${value}%"></i></div><strong>${value}</strong></div>`}function labelBar(k,v){return bar(SCORE_LABELS[k]||k,v)}function cards(items){if(!items.length)return `<p>此档暂无明显方向。</p>`;return items.map(item=>`<article class="mini-card"><div class="score">${item.score}</div><h3>${item.name}</h3><p>${item.note}</p><small><strong>典型专业：</strong>${item.typical}<br><strong>就业出口：</strong>${item.exit}<br><strong>现实关系：</strong>以 530 / 95924 位次看，需结合院校层次、招生计划和风险分级做二次筛选。</small></article>`).join("")}
+function renderResults(){const result=state.result||calculateResult();state.result=result;const scores=result.scores,recs=classifyRecommendations(activeScoresFromResult(result));document.getElementById("results").innerHTML=`<section class="hero result-hero"><p class="eyebrow">总览结论</p><h1>${result.summary.profile_tags.join(" · ")}</h1><p class="lead">你更适合有明确学习路径、能积累专业壁垒、就业出口相对清晰的专业方向。专业决策清晰度 ${result.summary.decision_clarity}，现实约束明确度 ${result.summary.constraint_clarity}。</p><div class="chips">${(result.summary.top_directions.length?result.summary.top_directions:result.recommended_major_categories.slice(0,5)).map(x=>`<span class="chip">${x}</span>`).join("")}</div><div class="actions"><button id="jsonBtn">导出 JSON 给系统使用</button><button id="mdBtn" class="secondary">导出 Markdown 家庭报告</button><button id="copyBtn" class="secondary">复制核心结论</button><button id="clearBtn" class="secondary">重新开始</button></div></section><section class="card"><h2>专业方向推荐矩阵</h2><h3>推荐优先</h3><div class="grid">${cards(recs.recommended)}</div><h3>谨慎探索</h3><div class="grid">${cards(recs.cautious)}</div><h3>不建议主攻</h3><div class="grid muted-grid">${cards(recs.notRecommended.slice(0,6))}</div></section><section class="card"><h2>RIASEC 兴趣画像</h2>${bar("R 现实型",scores.riasec.R)}${bar("I 研究型",scores.riasec.I)}${bar("A 艺术型",scores.riasec.A)}${bar("S 社会型",scores.riasec.S)}${bar("E 企业型",scores.riasec.E)}${bar("C 常规型",scores.riasec.C)}</section><section class="card"><h2>能力倾向画像</h2>${Object.entries(scores.abilities).map(([k,v])=>labelBar(k,v)).join("")}</section><section class="card"><h2>职业价值观画像</h2>${Object.entries(scores.values).map(([k,v])=>labelBar(k,v)).join("")}</section><section class="card"><h2>工作环境适配</h2>${Object.entries(scores.environment).map(([k,v])=>labelBar(k,v)).join("")}</section><section class="card"><h2>风险承受雷达</h2>${Object.entries(scores.risk).map(([k,v])=>labelBar(k,v)).join("")}</section><section class="card"><h2>家庭约束冲突点</h2>${result.conflicts.length?result.conflicts.map(c=>`<p><strong>${c.type}</strong>：${c.text}</p>`).join(""):"<p>暂未发现明显冲突。请结合家庭预算、地域偏好和专业录取风险复核。</p>"}</section><section class="card"><h2>导出与下一步</h2><p>导出 JSON 后，可由后续脚本导入 candidate/preferences.md 或 SQLite 偏好字段。Markdown 适合家庭讨论、打印和人工复核。</p><div class="actions"><button id="jsonBtn">导出 JSON 给系统使用</button><button id="mdBtn" class="secondary">导出 Markdown 家庭报告</button></div></section>`}
+function downloadFile(filename,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);toast(`已生成 ${filename}`)}function exportJSON(){const result=state.result||calculateResult();downloadFile("preferences.generated.json",JSON.stringify(result,null,2),"application/json;charset=utf-8")}function exportMarkdown(){const result=state.result||calculateResult();const md=`# 专业偏好测评报告
+
+## 一句话结论
+
+${result.summary.profile_tags.join(" · ")}
+
+## 推荐方向
+
+${result.recommended_major_categories.map(x=>`- ${x}`).join("
+")}
+
+## 谨慎方向
+
+${result.cautious_major_categories.map(x=>`- ${x}`).join("
+")}
+
+## 不建议主攻方向
+
+${result.excluded_major_categories.map(x=>`- ${x}`).join("
+")}
+
+## 兴趣画像
+
+${Object.entries(result.scores.riasec).map(([k,v])=>`- ${k}：${v}`).join("
+")}
+
+## 能力画像
+
+${Object.entries(result.scores.abilities).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("
+")}
+
+## 职业价值观
+
+${Object.entries(result.scores.values).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("
+")}
+
+## 风险接受度
+
+${Object.entries(result.scores.risk).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("
+")}
+
+## 家庭冲突点
+
+${result.conflicts.length?result.conflicts.map(c=>`- **${c.type}**：${c.text}`).join("
+"):"暂无明显冲突。"}
+
+## 可导入志愿系统的偏好配置
+
+\`\`\`json
+${JSON.stringify(result.constraints,null,2)}
+\`\`\`
+`;downloadFile("preferences.generated.md",md,"text/markdown;charset=utf-8")}function copySummary(){const result=state.result||calculateResult(),text=`${result.summary.profile_tags.join(" · ")}：推荐 ${result.recommended_major_categories.slice(0,5).join("、")}`;navigator.clipboard?navigator.clipboard.writeText(text).then(()=>toast("核心结论已复制")):toast(text)}function toast(message){const old=document.querySelector(".toast");if(old)old.remove();const el=document.createElement("div");el.className="toast";el.textContent=message;document.body.appendChild(el);setTimeout(()=>el.remove(),2200)}
+document.addEventListener("click",event=>{const btn=event.target.closest("button");if(!btn)return;if(btn.id==="startBtn")show("confirm");if(btn.id==="resumeBtn"){if(state.completed&&state.result){renderResults();show("results")}else{show("survey");renderQuestion()}}if(btn.id==="confirmBtn"){show("survey");renderQuestion()}if(btn.id==="backWelcomeBtn")show("welcome");if(btn.id==="nextBtn")nextQuestion();if(btn.id==="prevBtn")prevQuestion();if(btn.classList.contains("option"))setAnswer(QUESTIONS[state.current],btn.dataset.value);if(btn.id==="clearBtn")clearState();if(btn.id==="jsonBtn")exportJSON();if(btn.id==="mdBtn")exportMarkdown();if(btn.id==="copyBtn")copySummary()});
+</script></body></html>
