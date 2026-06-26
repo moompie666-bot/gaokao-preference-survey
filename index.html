@@ -1590,43 +1590,35 @@ ${result.summary.profile_tags.join(" · ")}
 
 ## 推荐方向
 
-${result.recommended_major_categories.map(x=>`- ${x}`).join("
-")}
+${result.recommended_major_categories.map(x=>`- ${x}`).join("\n")}
 
 ## 谨慎方向
 
-${result.cautious_major_categories.map(x=>`- ${x}`).join("
-")}
+${result.cautious_major_categories.map(x=>`- ${x}`).join("\n")}
 
 ## 不建议主攻方向
 
-${result.excluded_major_categories.map(x=>`- ${x}`).join("
-")}
+${result.excluded_major_categories.map(x=>`- ${x}`).join("\n")}
 
 ## 兴趣画像
 
-${Object.entries(result.scores.riasec).map(([k,v])=>`- ${k}：${v}`).join("
-")}
+${Object.entries(result.scores.riasec).map(([k,v])=>`- ${k}：${v}`).join("\n")}
 
 ## 能力画像
 
-${Object.entries(result.scores.abilities).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("
-")}
+${Object.entries(result.scores.abilities).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("\n")}
 
 ## 职业价值观
 
-${Object.entries(result.scores.values).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("
-")}
+${Object.entries(result.scores.values).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("\n")}
 
 ## 风险接受度
 
-${Object.entries(result.scores.risk).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("
-")}
+${Object.entries(result.scores.risk).map(([k,v])=>`- ${SCORE_LABELS[k]||k}：${v}`).join("\n")}
 
 ## 家庭冲突点
 
-${result.conflicts.length?result.conflicts.map(c=>`- **${c.type}**：${c.text}`).join("
-"):"暂无明显冲突。"}
+${result.conflicts.length?result.conflicts.map(c=>`- **${c.type}**：${c.text}`).join("\n"):"暂无明显冲突。"}
 
 ## 可导入志愿系统的偏好配置
 
