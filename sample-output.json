@@ -1,0 +1,116 @@
+{
+  "version": "1.0",
+  "candidate": "candidate_anhui_2026_physics_530_95924",
+  "test_mode": "deep_126",
+  "weights": {
+    "riasec": 0.3,
+    "abilities": 0.2,
+    "values": 0.2,
+    "environment": 0.15,
+    "risk": 0.1,
+    "cognitive": 0.05
+  },
+  "summary": {
+    "profile_tags": [
+      "稳定积累型",
+      "应用技术型",
+      "现实导向"
+    ],
+    "decision_clarity": 82,
+    "constraint_clarity": 76,
+    "top_directions": [
+      "电气类",
+      "自动化类",
+      "电子信息类",
+      "医学技术类",
+      "财会审计类"
+    ]
+  },
+  "scores": {
+    "riasec": {
+      "R": 82,
+      "I": 74,
+      "A": 35,
+      "S": 55,
+      "E": 42,
+      "C": 70
+    },
+    "abilities": {
+      "math_logic": 72,
+      "language_expression": 61,
+      "memory": 78,
+      "hands_on": 66,
+      "communication": 55,
+      "long_focus": 80,
+      "abstract_reasoning": 69,
+      "rule_execution": 74
+    },
+    "values": {
+      "stability": 88,
+      "income": 72,
+      "public_sector": 76,
+      "work_life_balance": 82,
+      "city_opportunity": 65,
+      "technical_growth": 78
+    },
+    "environment": {
+      "hospital": 52,
+      "school": 70,
+      "factory": 58,
+      "office_data": 86,
+      "night_shift": 20,
+      "grassroots": 45,
+      "exam_path": 78
+    },
+    "risk": {
+      "high_tuition": 20,
+      "postgraduate_required": 55,
+      "ai_risk": 42,
+      "industry_cycle": 48,
+      "family_resource_dependency": 30,
+      "adjustment_risk": 68,
+      "far_region": 60,
+      "work_intensity": 52
+    },
+    "cognitive": {
+      "independent": 72,
+      "facts": 78,
+      "logic": 75,
+      "structure": 80
+    }
+  },
+  "recommended_major_categories": [
+    "电气类",
+    "自动化类",
+    "电子信息类",
+    "医学技术类",
+    "财会审计类"
+  ],
+  "cautious_major_categories": [
+    "计算机类",
+    "药学类",
+    "法学类",
+    "护理学类"
+  ],
+  "excluded_major_categories": [
+    "高收费中外合作",
+    "强资源依赖金融类"
+  ],
+  "constraints": {
+    "max_tuition": 8000,
+    "accept_private_school": false,
+    "accept_chinese_foreign": false,
+    "accept_far_region": true,
+    "accept_nursing": false,
+    "accept_agriculture": true,
+    "accept_medical": true,
+    "accept_postgraduate_required": true
+  },
+  "conflicts": [
+    {
+      "type": "兴趣 vs 家庭约束",
+      "text": "本人对医学技术有兴趣，家庭需确认是否接受医学相关工作环境。"
+    }
+  ],
+  "raw_answers": {}
+}
